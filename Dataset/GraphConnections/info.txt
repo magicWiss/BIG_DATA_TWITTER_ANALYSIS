@@ -1,0 +1,2 @@
+GRAPH CONNECTIONS
+In questo folder sono presenti i dati relativi al grafo indotto dalle relazioni tra i diversi utenti.
