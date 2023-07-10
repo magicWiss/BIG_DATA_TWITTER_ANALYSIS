@@ -1,0 +1,74 @@
+1)DataIntegration
+
+    E' il primo layer dell'architettura.
+    Rietrano in questa fase della pipeline le operazioni di ingestion ed integration
+
+    Data Integration
+    I dati vengono salvati "as they are". Si segue una logica "schema on read".
+    I dati presenti in questo layer (in formato csv o json) subiscono il seguente processo:
+    1. memorizzazione-> Original_RawData
+    2. trasformazione schema->Transformed_schema_data
+    3. integrati->Integrated_data
+
+    INFO OPERAZIONI
+    1)Schema on read
+    2)trasformazione schema:
+        lo schema dei dati viene convertito in modo tale da essere uniformato con lo schema di qatar_ORG.csv. Si segue il mapping definito nel 
+        file Transformed_schema_data/fieldMapping.txt.
+        INPUT FILES:
+        Original_RawData/*.csv
+        OUTPUT FILES:
+        Transformed_schema_data/*.csv
+
+    3)Integrazione dati:
+        dopo aver uniformato gli schemi dei diversi dataset presenti nel raw layer si effettua l'operazione di integrazione.
+        La fase di schema matching è performata nello step precedente
+        La fase di record linkage capitalizza gli id univoci associati ad ogni singolo tweet
+        INPUT FILES:
+        Transformed_schema_data/*.csv
+        OUTPUT FILES:
+        Integreted_data/integratedData.csv
+
+
+2)Data_Agumentation
+    E' il secondo layer della pipeline di analytics.
+    I dati dopo essere integrati vengono agumentati mediante operazioni di: 
+        1)Hashtag extraction
+        2)Noun extraction
+        3)...
+
+    Una volta agumentati i dati sono pronti per essere smistati nelle diverse pipeline parallele di (fase 3 della pipeline):
+        A)Graph creation
+        B)Topic modeling
+        C)Hashtag analysis
+
+        INPUT FILE
+        RawData/Integrated_data/integratedData.csv
+        OUTPUT FILE
+        CuratedData/AgumentedData/dataWithhastags.csv
+
+
+3)Data processing
+
+    3.A)GRAPH CREATION:
+
+        I dati agumentati vengono usati per la creazione di una prima versione del grafo indotto dalle relazioni presenti tra i diversi utenti.
+
+        Il grafo viene memorizzato su NEO4J
+
+        Gli archi (per il momento) non hanno attributi (se non l'id del tweet)
+
+        Successivamente questo grafo verrà adornato con informazioni extra (topic del tweet, sentiment del tweet).
+
+        La scelta di creare il grafo senza info aggiuntive è dato dalla possibilità di poter estrarre da questo informazioni utili sul network degli utenti
+        Algoritmi di community search non richiedonon informazioni extra ma lavorano solo sulla topologia del grafo
+
+    3.B)Topic modeling
+
+    3.C)Sentiment analysis
+
+
+
+
+
+
