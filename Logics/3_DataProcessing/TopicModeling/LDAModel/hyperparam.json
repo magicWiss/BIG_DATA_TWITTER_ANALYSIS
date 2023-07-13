@@ -1,0 +1,6 @@
+{
+    "maxIter": 10,
+    "numTopics": 10,
+    "maxTopicsPerRow": 5
+  }
+  
