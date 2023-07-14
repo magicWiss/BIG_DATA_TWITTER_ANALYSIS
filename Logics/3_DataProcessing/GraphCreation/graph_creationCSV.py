@@ -16,6 +16,7 @@ def create_entry(data):
         user_id=data[USER_ID]
         conv_auth=data[CONV_AUTH_ID]
         tweet_id=data[TWEET_ID]
+        conv_id=data[CONV_ID]
 
         if conv_auth!="":
         
@@ -43,7 +44,7 @@ df = spark.read.csv(input_filepath, header=True, inferSchema=True)
 filtered_df = df.filter(df[CONV_AUTH_ID].isNotNull() | (df[CONV_AUTH_ID] != ""))
 
 # Select the desired columns (1, 3, and 6)
-selected_df = filtered_df.select(df.columns[USER_ID], df.columns[TWEET_ID], df.columns[CONV_AUTH_ID])
+selected_df = filtered_df.select(df.columns[USER_ID], df.columns[TWEET_ID], df.columns[CONV_AUTH_ID], df.columns[CONV_ID])
 
 # Write the selected DataFrame to a new CSV file
 selected_df.write.csv(output_filepath, header=True)

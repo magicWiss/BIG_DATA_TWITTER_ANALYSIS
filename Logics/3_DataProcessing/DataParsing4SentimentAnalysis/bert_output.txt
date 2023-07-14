@@ -1,0 +1,498 @@
+$SPARK_HOME/bin/spark-submit --master local /home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Logics/3_DataProcessing/DataParsing4SentimentAnalysis/dataCleaning4sentimentAnalysis.py --input_path file:///home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Dataset/RawData/Integrated_data/integratedData.csv --output_path file:///home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Dataset/CuratedData/DataForSentimentAnalysis/parsed_data
+23/07/13 23:03:05 WARN Utils: Your hostname, federico-wht resolves to a loopback address: 127.0.1.1; using 192.168.82.155 instead (on interface wlp2s0)
+23/07/13 23:03:05 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+23/07/13 23:03:13 INFO SparkContext: Running Spark version 3.4.0
+23/07/13 23:03:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+23/07/13 23:03:13 INFO ResourceUtils: ==============================================================
+23/07/13 23:03:13 INFO ResourceUtils: No custom resources configured for spark.driver.
+23/07/13 23:03:13 INFO ResourceUtils: ==============================================================
+23/07/13 23:03:13 INFO SparkContext: Submitted application: CSV Integration
+23/07/13 23:03:13 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+23/07/13 23:03:13 INFO ResourceProfile: Limiting resource is cpu
+23/07/13 23:03:13 INFO ResourceProfileManager: Added ResourceProfile id: 0
+23/07/13 23:03:13 INFO SecurityManager: Changing view acls to: federico
+23/07/13 23:03:13 INFO SecurityManager: Changing modify acls to: federico
+23/07/13 23:03:13 INFO SecurityManager: Changing view acls groups to: 
+23/07/13 23:03:13 INFO SecurityManager: Changing modify acls groups to: 
+23/07/13 23:03:13 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: federico; groups with view permissions: EMPTY; users with modify permissions: federico; groups with modify permissions: EMPTY
+23/07/13 23:03:13 INFO Utils: Successfully started service 'sparkDriver' on port 33205.
+23/07/13 23:03:13 INFO SparkEnv: Registering MapOutputTracker
+23/07/13 23:03:13 INFO SparkEnv: Registering BlockManagerMaster
+23/07/13 23:03:13 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/07/13 23:03:13 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/07/13 23:03:13 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+23/07/13 23:03:13 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-d1cd9f7d-aae0-4192-9c09-b015f8e7c10a
+23/07/13 23:03:13 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+23/07/13 23:03:13 INFO SparkEnv: Registering OutputCommitCoordinator
+23/07/13 23:03:13 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+23/07/13 23:03:13 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/07/13 23:03:13 INFO Executor: Starting executor ID driver on host 192.168.82.155
+23/07/13 23:03:14 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+23/07/13 23:03:14 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35935.
+23/07/13 23:03:14 INFO NettyBlockTransferService: Server created on 192.168.82.155:35935
+23/07/13 23:03:14 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/07/13 23:03:14 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.82.155, 35935, None)
+23/07/13 23:03:14 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.82.155:35935 with 434.4 MiB RAM, BlockManagerId(driver, 192.168.82.155, 35935, None)
+23/07/13 23:03:14 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.82.155, 35935, None)
+23/07/13 23:03:14 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.82.155, 35935, None)
+23/07/13 23:03:14 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+23/07/13 23:03:14 INFO SharedState: Warehouse path is 'file:/home/federico/spark-warehouse'.
+23/07/13 23:03:15 INFO InMemoryFileIndex: It took 48 ms to list leaf files for 1 paths.
+23/07/13 23:03:15 INFO InMemoryFileIndex: It took 2 ms to list leaf files for 1 paths.
+23/07/13 23:03:17 INFO FileSourceStrategy: Pushed Filters: 
+23/07/13 23:03:17 INFO FileSourceStrategy: Post-Scan Filters: (length(trim(value#0, None)) > 0)
+23/07/13 23:03:17 INFO CodeGenerator: Code generated in 159.584095 ms
+23/07/13 23:03:17 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 199.5 KiB, free 434.2 MiB)
+23/07/13 23:03:17 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 34.5 KiB, free 434.2 MiB)
+23/07/13 23:03:17 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 192.168.82.155:35935 (size: 34.5 KiB, free: 434.4 MiB)
+23/07/13 23:03:17 INFO SparkContext: Created broadcast 0 from csv at NativeMethodAccessorImpl.java:0
+23/07/13 23:03:17 INFO FileSourceScanExec: Planning scan with bin packing, max size: 77745933 bytes, open cost is considered as scanning 4194304 bytes.
+23/07/13 23:03:17 INFO SparkContext: Starting job: csv at NativeMethodAccessorImpl.java:0
+23/07/13 23:03:17 INFO DAGScheduler: Got job 0 (csv at NativeMethodAccessorImpl.java:0) with 1 output partitions
+23/07/13 23:03:17 INFO DAGScheduler: Final stage: ResultStage 0 (csv at NativeMethodAccessorImpl.java:0)
+23/07/13 23:03:17 INFO DAGScheduler: Parents of final stage: List()
+23/07/13 23:03:17 INFO DAGScheduler: Missing parents: List()
+23/07/13 23:03:17 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[3] at csv at NativeMethodAccessorImpl.java:0), which has no missing parents
+23/07/13 23:03:17 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 12.1 KiB, free 434.2 MiB)
+23/07/13 23:03:17 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.0 KiB, free 434.2 MiB)
+23/07/13 23:03:17 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 192.168.82.155:35935 (size: 6.0 KiB, free: 434.4 MiB)
+23/07/13 23:03:17 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1535
+23/07/13 23:03:17 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[3] at csv at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+23/07/13 23:03:17 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+23/07/13 23:03:18 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (192.168.82.155, executor driver, partition 0, PROCESS_LOCAL, 7981 bytes) 
+23/07/13 23:03:18 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+23/07/13 23:03:18 INFO FileScanRDD: Reading File path: file:///home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Dataset/RawData/Integrated_data/integratedData.csv, range: 0-73551629, partition values: [empty row]
+23/07/13 23:03:18 INFO CodeGenerator: Code generated in 11.354679 ms
+23/07/13 23:03:18 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1666 bytes result sent to driver
+23/07/13 23:03:18 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 194 ms on 192.168.82.155 (executor driver) (1/1)
+23/07/13 23:03:18 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+23/07/13 23:03:18 INFO DAGScheduler: ResultStage 0 (csv at NativeMethodAccessorImpl.java:0) finished in 0.304 s
+23/07/13 23:03:18 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+23/07/13 23:03:18 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+23/07/13 23:03:18 INFO DAGScheduler: Job 0 finished: csv at NativeMethodAccessorImpl.java:0, took 0.339375 s
+23/07/13 23:03:18 INFO CodeGenerator: Code generated in 11.84485 ms
+23/07/13 23:03:18 INFO FileSourceStrategy: Pushed Filters: 
+23/07/13 23:03:18 INFO FileSourceStrategy: Post-Scan Filters: 
+23/07/13 23:03:18 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 199.5 KiB, free 434.0 MiB)
+23/07/13 23:03:18 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 34.5 KiB, free 433.9 MiB)
+23/07/13 23:03:18 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 192.168.82.155:35935 (size: 34.5 KiB, free: 434.3 MiB)
+23/07/13 23:03:18 INFO SparkContext: Created broadcast 2 from csv at NativeMethodAccessorImpl.java:0
+23/07/13 23:03:18 INFO FileSourceScanExec: Planning scan with bin packing, max size: 77745933 bytes, open cost is considered as scanning 4194304 bytes.
+23/07/13 23:03:18 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 192.168.82.155:35935 in memory (size: 34.5 KiB, free: 434.4 MiB)
+23/07/13 23:03:18 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 192.168.82.155:35935 in memory (size: 6.0 KiB, free: 434.4 MiB)
+23/07/13 23:03:18 INFO SparkContext: Starting job: csv at NativeMethodAccessorImpl.java:0
+23/07/13 23:03:18 INFO DAGScheduler: Got job 1 (csv at NativeMethodAccessorImpl.java:0) with 1 output partitions
+23/07/13 23:03:18 INFO DAGScheduler: Final stage: ResultStage 1 (csv at NativeMethodAccessorImpl.java:0)
+23/07/13 23:03:18 INFO DAGScheduler: Parents of final stage: List()
+23/07/13 23:03:18 INFO DAGScheduler: Missing parents: List()
+23/07/13 23:03:18 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[9] at csv at NativeMethodAccessorImpl.java:0), which has no missing parents
+23/07/13 23:03:18 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 26.1 KiB, free 434.1 MiB)
+23/07/13 23:03:18 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 12.2 KiB, free 434.1 MiB)
+23/07/13 23:03:18 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 192.168.82.155:35935 (size: 12.2 KiB, free: 434.4 MiB)
+23/07/13 23:03:18 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1535
+23/07/13 23:03:18 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[9] at csv at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+23/07/13 23:03:18 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+23/07/13 23:03:18 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (192.168.82.155, executor driver, partition 0, PROCESS_LOCAL, 7981 bytes) 
+23/07/13 23:03:18 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+23/07/13 23:03:18 INFO FileScanRDD: Reading File path: file:///home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Dataset/RawData/Integrated_data/integratedData.csv, range: 0-73551629, partition values: [empty row]
+23/07/13 23:03:20 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 1721 bytes result sent to driver
+23/07/13 23:03:20 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 1539 ms on 192.168.82.155 (executor driver) (1/1)
+23/07/13 23:03:20 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+23/07/13 23:03:20 INFO DAGScheduler: ResultStage 1 (csv at NativeMethodAccessorImpl.java:0) finished in 1.595 s
+23/07/13 23:03:20 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+23/07/13 23:03:20 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+23/07/13 23:03:20 INFO DAGScheduler: Job 1 finished: csv at NativeMethodAccessorImpl.java:0, took 1.602484 s
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 208.0 B, free 434.1 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Removed broadcast_3_piece0 on 192.168.82.155:35935 in memory (size: 12.2 KiB, free: 434.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 192.168.82.155:35935 in memory (size: 34.5 KiB, free: 434.4 MiB)
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 4.0 MiB, free 430.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 430.4 MiB)
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4_piece1 stored as bytes in memory (estimated size 4.0 MiB, free 426.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Added broadcast_4_piece1 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 426.4 MiB)
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4_piece2 stored as bytes in memory (estimated size 4.0 MiB, free 422.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Added broadcast_4_piece2 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 422.4 MiB)
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4_piece3 stored as bytes in memory (estimated size 4.0 MiB, free 418.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Added broadcast_4_piece3 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 418.4 MiB)
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4_piece4 stored as bytes in memory (estimated size 4.0 MiB, free 414.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Added broadcast_4_piece4 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 414.4 MiB)
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4_piece5 stored as bytes in memory (estimated size 4.0 MiB, free 410.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Added broadcast_4_piece5 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 410.4 MiB)
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4_piece6 stored as bytes in memory (estimated size 4.0 MiB, free 406.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Added broadcast_4_piece6 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 406.4 MiB)
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4_piece7 stored as bytes in memory (estimated size 4.0 MiB, free 402.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Added broadcast_4_piece7 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 402.4 MiB)
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4_piece8 stored as bytes in memory (estimated size 4.0 MiB, free 398.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Added broadcast_4_piece8 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 398.4 MiB)
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4_piece9 stored as bytes in memory (estimated size 4.0 MiB, free 394.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Added broadcast_4_piece9 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 394.4 MiB)
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4_piece10 stored as bytes in memory (estimated size 4.0 MiB, free 390.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Added broadcast_4_piece10 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 390.4 MiB)
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4_piece11 stored as bytes in memory (estimated size 4.0 MiB, free 386.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Added broadcast_4_piece11 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 386.4 MiB)
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4_piece12 stored as bytes in memory (estimated size 4.0 MiB, free 382.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Added broadcast_4_piece12 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 382.4 MiB)
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4_piece13 stored as bytes in memory (estimated size 4.0 MiB, free 378.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Added broadcast_4_piece13 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 378.4 MiB)
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4_piece14 stored as bytes in memory (estimated size 4.0 MiB, free 374.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Added broadcast_4_piece14 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 374.4 MiB)
+23/07/13 23:03:21 INFO MemoryStore: Block broadcast_4_piece15 stored as bytes in memory (estimated size 4.0 MiB, free 370.4 MiB)
+23/07/13 23:03:21 INFO BlockManagerInfo: Added broadcast_4_piece15 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 370.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece16 stored as bytes in memory (estimated size 4.0 MiB, free 366.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece16 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 366.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece17 stored as bytes in memory (estimated size 4.0 MiB, free 362.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece17 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 362.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece18 stored as bytes in memory (estimated size 4.0 MiB, free 358.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece18 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 358.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece19 stored as bytes in memory (estimated size 4.0 MiB, free 354.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece19 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 354.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece20 stored as bytes in memory (estimated size 4.0 MiB, free 350.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece20 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 350.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece21 stored as bytes in memory (estimated size 4.0 MiB, free 346.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece21 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 346.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece22 stored as bytes in memory (estimated size 4.0 MiB, free 342.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece22 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 342.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece23 stored as bytes in memory (estimated size 4.0 MiB, free 338.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece23 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 338.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece24 stored as bytes in memory (estimated size 4.0 MiB, free 334.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece24 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 334.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece25 stored as bytes in memory (estimated size 4.0 MiB, free 330.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece25 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 330.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece26 stored as bytes in memory (estimated size 4.0 MiB, free 326.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece26 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 326.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece27 stored as bytes in memory (estimated size 4.0 MiB, free 322.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece27 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 322.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece28 stored as bytes in memory (estimated size 4.0 MiB, free 318.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece28 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 318.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece29 stored as bytes in memory (estimated size 4.0 MiB, free 314.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece29 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 314.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece30 stored as bytes in memory (estimated size 4.0 MiB, free 310.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece30 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 310.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece31 stored as bytes in memory (estimated size 4.0 MiB, free 306.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece31 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 306.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece32 stored as bytes in memory (estimated size 4.0 MiB, free 302.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece32 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 302.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece33 stored as bytes in memory (estimated size 4.0 MiB, free 298.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece33 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 298.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece34 stored as bytes in memory (estimated size 4.0 MiB, free 294.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece34 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 294.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece35 stored as bytes in memory (estimated size 4.0 MiB, free 290.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece35 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 290.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece36 stored as bytes in memory (estimated size 4.0 MiB, free 286.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece36 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 286.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece37 stored as bytes in memory (estimated size 4.0 MiB, free 282.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece37 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 282.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece38 stored as bytes in memory (estimated size 4.0 MiB, free 278.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece38 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 278.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece39 stored as bytes in memory (estimated size 4.0 MiB, free 274.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece39 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 274.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece40 stored as bytes in memory (estimated size 4.0 MiB, free 270.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece40 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 270.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece41 stored as bytes in memory (estimated size 4.0 MiB, free 266.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece41 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 266.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece42 stored as bytes in memory (estimated size 4.0 MiB, free 262.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece42 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 262.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece43 stored as bytes in memory (estimated size 4.0 MiB, free 258.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece43 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 258.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece44 stored as bytes in memory (estimated size 4.0 MiB, free 254.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece44 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 254.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece45 stored as bytes in memory (estimated size 4.0 MiB, free 250.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece45 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 250.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece46 stored as bytes in memory (estimated size 4.0 MiB, free 246.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece46 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 246.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece47 stored as bytes in memory (estimated size 4.0 MiB, free 242.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece47 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 242.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece48 stored as bytes in memory (estimated size 4.0 MiB, free 238.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece48 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 238.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece49 stored as bytes in memory (estimated size 4.0 MiB, free 234.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece49 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 234.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece50 stored as bytes in memory (estimated size 4.0 MiB, free 230.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece50 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 230.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece51 stored as bytes in memory (estimated size 4.0 MiB, free 226.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece51 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 226.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece52 stored as bytes in memory (estimated size 4.0 MiB, free 222.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece52 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 222.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece53 stored as bytes in memory (estimated size 4.0 MiB, free 218.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece53 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 218.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece54 stored as bytes in memory (estimated size 4.0 MiB, free 214.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece54 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 214.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece55 stored as bytes in memory (estimated size 4.0 MiB, free 210.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece55 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 210.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece56 stored as bytes in memory (estimated size 4.0 MiB, free 206.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece56 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 206.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece57 stored as bytes in memory (estimated size 4.0 MiB, free 202.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece57 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 202.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece58 stored as bytes in memory (estimated size 4.0 MiB, free 198.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece58 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 198.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece59 stored as bytes in memory (estimated size 4.0 MiB, free 194.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece59 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 194.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece60 stored as bytes in memory (estimated size 4.0 MiB, free 190.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece60 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 190.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece61 stored as bytes in memory (estimated size 4.0 MiB, free 186.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece61 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 186.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece62 stored as bytes in memory (estimated size 4.0 MiB, free 182.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece62 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 182.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece63 stored as bytes in memory (estimated size 4.0 MiB, free 178.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece63 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 178.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece64 stored as bytes in memory (estimated size 4.0 MiB, free 174.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece64 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 174.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece65 stored as bytes in memory (estimated size 4.0 MiB, free 170.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece65 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 170.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece66 stored as bytes in memory (estimated size 4.0 MiB, free 166.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece66 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 166.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece67 stored as bytes in memory (estimated size 4.0 MiB, free 162.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece67 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 162.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece68 stored as bytes in memory (estimated size 4.0 MiB, free 158.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece68 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 158.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece69 stored as bytes in memory (estimated size 4.0 MiB, free 154.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece69 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 154.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece70 stored as bytes in memory (estimated size 4.0 MiB, free 150.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece70 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 150.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece71 stored as bytes in memory (estimated size 4.0 MiB, free 146.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece71 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 146.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece72 stored as bytes in memory (estimated size 4.0 MiB, free 142.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece72 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 142.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece73 stored as bytes in memory (estimated size 4.0 MiB, free 138.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece73 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 138.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece74 stored as bytes in memory (estimated size 4.0 MiB, free 134.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece74 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 134.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece75 stored as bytes in memory (estimated size 4.0 MiB, free 130.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece75 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 130.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece76 stored as bytes in memory (estimated size 4.0 MiB, free 126.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece76 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 126.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece77 stored as bytes in memory (estimated size 4.0 MiB, free 122.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece77 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 122.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece78 stored as bytes in memory (estimated size 4.0 MiB, free 118.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece78 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 118.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece79 stored as bytes in memory (estimated size 4.0 MiB, free 114.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece79 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 114.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece80 stored as bytes in memory (estimated size 4.0 MiB, free 110.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece80 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 110.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece81 stored as bytes in memory (estimated size 4.0 MiB, free 106.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece81 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 106.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece82 stored as bytes in memory (estimated size 4.0 MiB, free 102.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece82 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 102.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece83 stored as bytes in memory (estimated size 4.0 MiB, free 98.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece83 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 98.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece84 stored as bytes in memory (estimated size 4.0 MiB, free 94.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece84 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 94.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece85 stored as bytes in memory (estimated size 4.0 MiB, free 90.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece85 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 90.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece86 stored as bytes in memory (estimated size 4.0 MiB, free 86.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece86 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 86.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece87 stored as bytes in memory (estimated size 4.0 MiB, free 82.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece87 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 82.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece88 stored as bytes in memory (estimated size 4.0 MiB, free 78.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece88 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 78.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece89 stored as bytes in memory (estimated size 4.0 MiB, free 74.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece89 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 74.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece90 stored as bytes in memory (estimated size 4.0 MiB, free 70.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece90 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 70.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece91 stored as bytes in memory (estimated size 4.0 MiB, free 66.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece91 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 66.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece92 stored as bytes in memory (estimated size 4.0 MiB, free 62.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece92 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 62.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece93 stored as bytes in memory (estimated size 4.0 MiB, free 58.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece93 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 58.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece94 stored as bytes in memory (estimated size 4.0 MiB, free 54.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece94 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 54.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece95 stored as bytes in memory (estimated size 4.0 MiB, free 50.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece95 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 50.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece96 stored as bytes in memory (estimated size 4.0 MiB, free 46.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece96 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 46.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece97 stored as bytes in memory (estimated size 4.0 MiB, free 42.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece97 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 42.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece98 stored as bytes in memory (estimated size 4.0 MiB, free 38.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece98 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 38.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece99 stored as bytes in memory (estimated size 4.0 MiB, free 34.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece99 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 34.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece100 stored as bytes in memory (estimated size 4.0 MiB, free 30.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece100 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 30.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece101 stored as bytes in memory (estimated size 4.0 MiB, free 26.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece101 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 26.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece102 stored as bytes in memory (estimated size 4.0 MiB, free 22.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece102 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 22.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece103 stored as bytes in memory (estimated size 4.0 MiB, free 18.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece103 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 18.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece104 stored as bytes in memory (estimated size 4.0 MiB, free 14.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece104 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 14.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece105 stored as bytes in memory (estimated size 4.0 MiB, free 10.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece105 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 10.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece106 stored as bytes in memory (estimated size 4.0 MiB, free 6.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece106 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 6.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: Block broadcast_4_piece107 stored as bytes in memory (estimated size 4.0 MiB, free 2.4 MiB)
+23/07/13 23:03:22 INFO BlockManagerInfo: Added broadcast_4_piece107 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 2.4 MiB)
+23/07/13 23:03:22 INFO MemoryStore: 2 blocks selected for dropping (4.0 MiB bytes)
+23/07/13 23:03:22 INFO BlockManager: Dropping block broadcast_4 from memory
+23/07/13 23:03:22 INFO BlockManager: Writing block broadcast_4 to disk
+23/07/13 23:03:23 INFO BlockManager: Dropping block broadcast_4_piece0 from memory
+23/07/13 23:03:23 INFO BlockManager: Writing block broadcast_4_piece0 to disk
+23/07/13 23:03:23 INFO BlockManagerInfo: Updated broadcast_4_piece0 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:03:23 INFO MemoryStore: After dropping 2 blocks, free memory is 6.4 MiB
+23/07/13 23:03:23 INFO MemoryStore: Block broadcast_4_piece108 stored as bytes in memory (estimated size 4.0 MiB, free 2.4 MiB)
+23/07/13 23:03:23 INFO BlockManagerInfo: Added broadcast_4_piece108 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 2.4 MiB)
+23/07/13 23:03:23 INFO MemoryStore: 1 blocks selected for dropping (4.0 MiB bytes)
+23/07/13 23:03:23 INFO BlockManager: Dropping block broadcast_4_piece1 from memory
+23/07/13 23:03:23 INFO BlockManager: Writing block broadcast_4_piece1 to disk
+23/07/13 23:03:23 INFO BlockManagerInfo: Updated broadcast_4_piece1 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:03:23 INFO MemoryStore: After dropping 1 blocks, free memory is 6.4 MiB
+23/07/13 23:03:23 INFO MemoryStore: Block broadcast_4_piece109 stored as bytes in memory (estimated size 4.0 MiB, free 2.4 MiB)
+23/07/13 23:03:23 INFO BlockManagerInfo: Added broadcast_4_piece109 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 2.4 MiB)
+23/07/13 23:03:23 INFO MemoryStore: 1 blocks selected for dropping (4.0 MiB bytes)
+23/07/13 23:03:23 INFO BlockManager: Dropping block broadcast_4_piece2 from memory
+23/07/13 23:03:23 INFO BlockManager: Writing block broadcast_4_piece2 to disk
+23/07/13 23:03:23 INFO BlockManagerInfo: Updated broadcast_4_piece2 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:03:23 INFO MemoryStore: After dropping 1 blocks, free memory is 6.4 MiB
+23/07/13 23:03:23 INFO MemoryStore: Block broadcast_4_piece110 stored as bytes in memory (estimated size 4.0 MiB, free 2.4 MiB)
+23/07/13 23:03:23 INFO BlockManagerInfo: Added broadcast_4_piece110 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 2.4 MiB)
+23/07/13 23:03:23 INFO MemoryStore: 1 blocks selected for dropping (4.0 MiB bytes)
+23/07/13 23:03:23 INFO BlockManager: Dropping block broadcast_4_piece3 from memory
+23/07/13 23:03:23 INFO BlockManager: Writing block broadcast_4_piece3 to disk
+23/07/13 23:03:23 INFO BlockManagerInfo: Updated broadcast_4_piece3 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:03:23 INFO MemoryStore: After dropping 1 blocks, free memory is 6.4 MiB
+23/07/13 23:03:23 INFO MemoryStore: Block broadcast_4_piece111 stored as bytes in memory (estimated size 4.0 MiB, free 2.4 MiB)
+23/07/13 23:03:23 INFO BlockManagerInfo: Added broadcast_4_piece111 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 2.4 MiB)
+23/07/13 23:03:23 INFO MemoryStore: 1 blocks selected for dropping (4.0 MiB bytes)
+23/07/13 23:03:23 INFO BlockManager: Dropping block broadcast_4_piece4 from memory
+23/07/13 23:03:23 INFO BlockManager: Writing block broadcast_4_piece4 to disk
+23/07/13 23:03:23 INFO BlockManagerInfo: Updated broadcast_4_piece4 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:03:23 INFO MemoryStore: After dropping 1 blocks, free memory is 6.4 MiB
+23/07/13 23:03:23 INFO MemoryStore: Block broadcast_4_piece112 stored as bytes in memory (estimated size 4.0 MiB, free 2.4 MiB)
+23/07/13 23:03:23 INFO BlockManagerInfo: Added broadcast_4_piece112 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 2.4 MiB)
+23/07/13 23:03:23 INFO MemoryStore: 1 blocks selected for dropping (4.0 MiB bytes)
+23/07/13 23:03:23 INFO BlockManager: Dropping block broadcast_4_piece5 from memory
+23/07/13 23:03:23 INFO BlockManager: Writing block broadcast_4_piece5 to disk
+23/07/13 23:03:23 INFO BlockManagerInfo: Updated broadcast_4_piece5 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:03:23 INFO MemoryStore: After dropping 1 blocks, free memory is 6.4 MiB
+23/07/13 23:03:23 INFO MemoryStore: Block broadcast_4_piece113 stored as bytes in memory (estimated size 4.0 MiB, free 2.4 MiB)
+23/07/13 23:03:23 INFO BlockManagerInfo: Added broadcast_4_piece113 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 2.4 MiB)
+23/07/13 23:03:23 INFO MemoryStore: 1 blocks selected for dropping (4.0 MiB bytes)
+23/07/13 23:03:23 INFO BlockManager: Dropping block broadcast_4_piece6 from memory
+23/07/13 23:03:23 INFO BlockManager: Writing block broadcast_4_piece6 to disk
+23/07/13 23:03:23 INFO BlockManagerInfo: Updated broadcast_4_piece6 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:03:23 INFO MemoryStore: After dropping 1 blocks, free memory is 6.4 MiB
+23/07/13 23:03:23 INFO MemoryStore: Block broadcast_4_piece114 stored as bytes in memory (estimated size 4.0 MiB, free 2.4 MiB)
+23/07/13 23:03:23 INFO BlockManagerInfo: Added broadcast_4_piece114 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 2.4 MiB)
+23/07/13 23:03:23 INFO MemoryStore: 1 blocks selected for dropping (4.0 MiB bytes)
+23/07/13 23:03:23 INFO BlockManager: Dropping block broadcast_4_piece7 from memory
+23/07/13 23:03:23 INFO BlockManager: Writing block broadcast_4_piece7 to disk
+23/07/13 23:03:23 INFO BlockManagerInfo: Updated broadcast_4_piece7 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:03:23 INFO MemoryStore: After dropping 1 blocks, free memory is 6.4 MiB
+23/07/13 23:03:23 INFO MemoryStore: Block broadcast_4_piece115 stored as bytes in memory (estimated size 4.0 MiB, free 2.4 MiB)
+23/07/13 23:03:23 INFO BlockManagerInfo: Added broadcast_4_piece115 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 2.4 MiB)
+23/07/13 23:03:23 INFO MemoryStore: 1 blocks selected for dropping (4.0 MiB bytes)
+23/07/13 23:03:23 INFO BlockManager: Dropping block broadcast_4_piece8 from memory
+23/07/13 23:03:23 INFO BlockManager: Writing block broadcast_4_piece8 to disk
+23/07/13 23:03:23 INFO BlockManagerInfo: Updated broadcast_4_piece8 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:03:23 INFO MemoryStore: After dropping 1 blocks, free memory is 6.4 MiB
+23/07/13 23:03:23 INFO MemoryStore: Block broadcast_4_piece116 stored as bytes in memory (estimated size 4.0 MiB, free 2.4 MiB)
+23/07/13 23:03:23 INFO BlockManagerInfo: Added broadcast_4_piece116 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 2.4 MiB)
+23/07/13 23:03:23 INFO MemoryStore: 1 blocks selected for dropping (4.0 MiB bytes)
+23/07/13 23:03:23 INFO BlockManager: Dropping block broadcast_4_piece9 from memory
+23/07/13 23:03:23 INFO BlockManager: Writing block broadcast_4_piece9 to disk
+23/07/13 23:03:23 INFO BlockManagerInfo: Updated broadcast_4_piece9 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:03:23 INFO MemoryStore: After dropping 1 blocks, free memory is 6.4 MiB
+23/07/13 23:03:23 INFO MemoryStore: Block broadcast_4_piece117 stored as bytes in memory (estimated size 4.0 MiB, free 2.4 MiB)
+23/07/13 23:03:23 INFO BlockManagerInfo: Added broadcast_4_piece117 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 2.4 MiB)
+23/07/13 23:03:23 INFO MemoryStore: 1 blocks selected for dropping (4.0 MiB bytes)
+23/07/13 23:03:23 INFO BlockManager: Dropping block broadcast_4_piece10 from memory
+23/07/13 23:03:23 INFO BlockManager: Writing block broadcast_4_piece10 to disk
+23/07/13 23:03:23 INFO BlockManagerInfo: Updated broadcast_4_piece10 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:03:23 INFO MemoryStore: After dropping 1 blocks, free memory is 6.4 MiB
+23/07/13 23:03:23 INFO MemoryStore: Block broadcast_4_piece118 stored as bytes in memory (estimated size 4.0 MiB, free 2.4 MiB)
+23/07/13 23:03:23 INFO BlockManagerInfo: Added broadcast_4_piece118 in memory on 192.168.82.155:35935 (size: 4.0 MiB, free: 2.4 MiB)
+23/07/13 23:03:23 INFO MemoryStore: 1 blocks selected for dropping (4.0 MiB bytes)
+23/07/13 23:03:23 INFO BlockManager: Dropping block broadcast_4_piece11 from memory
+23/07/13 23:03:23 INFO BlockManager: Writing block broadcast_4_piece11 to disk
+23/07/13 23:03:23 INFO BlockManagerInfo: Updated broadcast_4_piece11 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:03:23 INFO MemoryStore: After dropping 1 blocks, free memory is 6.4 MiB
+23/07/13 23:03:23 INFO MemoryStore: Block broadcast_4_piece119 stored as bytes in memory (estimated size 3.0 MiB, free 3.4 MiB)
+23/07/13 23:03:23 INFO BlockManagerInfo: Added broadcast_4_piece119 in memory on 192.168.82.155:35935 (size: 3.0 MiB, free: 3.4 MiB)
+23/07/13 23:03:23 INFO SparkContext: Created broadcast 4 from broadcast at NativeMethodAccessorImpl.java:0
+23/07/13 23:03:23 INFO FileSourceStrategy: Pushed Filters: 
+23/07/13 23:03:23 INFO FileSourceStrategy: Post-Scan Filters: 
+23/07/13 23:03:23 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+23/07/13 23:03:23 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+23/07/13 23:03:23 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+23/07/13 23:03:23 INFO CodeGenerator: Code generated in 20.988093 ms
+23/07/13 23:03:23 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 199.4 KiB, free 3.2 MiB)
+23/07/13 23:03:23 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 34.4 KiB, free 3.2 MiB)
+23/07/13 23:03:23 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 192.168.82.155:35935 (size: 34.4 KiB, free: 3.4 MiB)
+23/07/13 23:03:23 INFO SparkContext: Created broadcast 5 from csv at NativeMethodAccessorImpl.java:0
+23/07/13 23:03:23 INFO FileSourceScanExec: Planning scan with bin packing, max size: 77745933 bytes, open cost is considered as scanning 4194304 bytes.
+23/07/13 23:03:23 INFO SparkContext: Starting job: csv at NativeMethodAccessorImpl.java:0
+23/07/13 23:03:23 INFO DAGScheduler: Got job 2 (csv at NativeMethodAccessorImpl.java:0) with 1 output partitions
+23/07/13 23:03:23 INFO DAGScheduler: Final stage: ResultStage 2 (csv at NativeMethodAccessorImpl.java:0)
+23/07/13 23:03:23 INFO DAGScheduler: Parents of final stage: List()
+23/07/13 23:03:23 INFO DAGScheduler: Missing parents: List()
+23/07/13 23:03:23 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[15] at csv at NativeMethodAccessorImpl.java:0), which has no missing parents
+23/07/13 23:03:23 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 231.1 KiB, free 3.0 MiB)
+23/07/13 23:03:23 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 85.8 KiB, free 2.9 MiB)
+23/07/13 23:03:23 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 192.168.82.155:35935 (size: 85.8 KiB, free: 3.3 MiB)
+23/07/13 23:03:23 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1535
+23/07/13 23:03:23 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[15] at csv at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+23/07/13 23:03:23 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks resource profile 0
+23/07/13 23:03:23 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2) (192.168.82.155, executor driver, partition 0, PROCESS_LOCAL, 7981 bytes) 
+23/07/13 23:03:23 INFO Executor: Running task 0.0 in stage 2.0 (TID 2)
+23/07/13 23:03:23 INFO CodeGenerator: Code generated in 20.862789 ms
+23/07/13 23:03:24 INFO CodeGenerator: Code generated in 14.607933 ms
+23/07/13 23:03:24 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+23/07/13 23:03:24 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+23/07/13 23:03:24 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+23/07/13 23:03:27 INFO BlockManagerInfo: Added broadcast_4_python on disk on 192.168.82.155:35935 (size: 476.9 MiB)
+23/07/13 23:03:33 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 176.0 B, free 2.9 MiB)
+23/07/13 23:03:33 INFO FileScanRDD: Reading File path: file:///home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Dataset/RawData/Integrated_data/integratedData.csv, range: 0-73551629, partition values: [empty row]
+23/07/13 23:03:33 INFO CodeGenerator: Code generated in 26.18974 ms
+23/07/13 23:03:33 INFO MemoryStore: 4 blocks selected for dropping (16.0 MiB bytes)
+23/07/13 23:03:33 INFO BlockManager: Dropping block broadcast_4_piece12 from memory
+23/07/13 23:03:33 INFO BlockManager: Writing block broadcast_4_piece12 to disk
+23/07/13 23:03:33 INFO BlockManagerInfo: Updated broadcast_4_piece12 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:03:33 INFO BlockManager: Dropping block broadcast_4_piece13 from memory
+23/07/13 23:03:33 INFO BlockManager: Writing block broadcast_4_piece13 to disk
+23/07/13 23:03:33 INFO BlockManagerInfo: Updated broadcast_4_piece13 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:03:33 INFO BlockManager: Dropping block broadcast_4_piece14 from memory
+23/07/13 23:03:33 INFO BlockManager: Writing block broadcast_4_piece14 to disk
+23/07/13 23:03:33 INFO BlockManagerInfo: Updated broadcast_4_piece14 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:03:33 INFO BlockManager: Dropping block broadcast_4_piece15 from memory
+23/07/13 23:03:33 INFO BlockManager: Writing block broadcast_4_piece15 to disk
+23/07/13 23:03:33 INFO BlockManagerInfo: Updated broadcast_4_piece15 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:03:33 INFO MemoryStore: After dropping 4 blocks, free memory is 18.9 MiB
+23/07/13 23:19:27 INFO MemoryStore: 4 blocks selected for dropping (16.0 MiB bytes)
+23/07/13 23:19:27 INFO BlockManager: Dropping block broadcast_4_piece16 from memory
+23/07/13 23:19:27 INFO BlockManager: Writing block broadcast_4_piece16 to disk
+23/07/13 23:19:27 INFO BlockManagerInfo: Updated broadcast_4_piece16 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:19:27 INFO BlockManager: Dropping block broadcast_4_piece17 from memory
+23/07/13 23:19:27 INFO BlockManager: Writing block broadcast_4_piece17 to disk
+23/07/13 23:19:27 INFO BlockManagerInfo: Updated broadcast_4_piece17 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:19:27 INFO BlockManager: Dropping block broadcast_4_piece18 from memory
+23/07/13 23:19:27 INFO BlockManager: Writing block broadcast_4_piece18 to disk
+23/07/13 23:19:27 INFO BlockManagerInfo: Updated broadcast_4_piece18 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:19:27 INFO BlockManager: Dropping block broadcast_4_piece19 from memory
+23/07/13 23:19:27 INFO BlockManager: Writing block broadcast_4_piece19 to disk
+23/07/13 23:19:27 INFO BlockManagerInfo: Updated broadcast_4_piece19 on disk on 192.168.82.155:35935 (current size: 4.0 MiB, original size: 0.0 B)
+23/07/13 23:19:27 INFO MemoryStore: After dropping 4 blocks, free memory is 18.9 MiB
+23/07/14 05:12:39 INFO PythonUDFRunner: Times: total = 22156168, boot = 634, init = 11312, finish = 22144222
+23/07/14 05:12:40 INFO FileOutputCommitter: Saved output of task 'attempt_202307132303232573491888704859499_0002_m_000000_2' to file:/home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Dataset/CuratedData/DataForSentimentAnalysis/parsed_data/_temporary/0/task_202307132303232573491888704859499_0002_m_000000
+23/07/14 05:12:40 INFO SparkHadoopMapRedUtil: attempt_202307132303232573491888704859499_0002_m_000000_2: Committed. Elapsed time: 1 ms.
+23/07/14 05:12:40 INFO Executor: Finished task 0.0 in stage 2.0 (TID 2). 3516 bytes result sent to driver
+23/07/14 05:12:40 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 22156466 ms on 192.168.82.155 (executor driver) (1/1)
+23/07/14 05:12:40 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+23/07/14 05:12:40 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 59261
+23/07/14 05:12:40 INFO DAGScheduler: ResultStage 2 (csv at NativeMethodAccessorImpl.java:0) finished in 22156.520 s
+23/07/14 05:12:40 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+23/07/14 05:12:40 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage finished
+23/07/14 05:12:40 INFO DAGScheduler: Job 2 finished: csv at NativeMethodAccessorImpl.java:0, took 22156.526225 s
+23/07/14 05:12:40 INFO FileFormatWriter: Start to commit write Job 11961145-dfb3-43ec-adcd-3b8a8c46f3ce.
+23/07/14 05:12:40 INFO FileFormatWriter: Write Job 11961145-dfb3-43ec-adcd-3b8a8c46f3ce committed. Elapsed time: 35 ms.
+23/07/14 05:12:40 INFO FileFormatWriter: Finished processing stats for write job 11961145-dfb3-43ec-adcd-3b8a8c46f3ce.
+23/07/14 05:12:40 INFO SparkContext: SparkContext is stopping with exitCode 0.
+23/07/14 05:12:40 INFO SparkUI: Stopped Spark web UI at http://192.168.82.155:4040
+23/07/14 05:12:40 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+23/07/14 05:12:40 INFO MemoryStore: MemoryStore cleared
+23/07/14 05:12:40 INFO BlockManager: BlockManager stopped
+23/07/14 05:12:40 INFO BlockManagerMaster: BlockManagerMaster stopped
+23/07/14 05:12:40 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+23/07/14 05:12:40 INFO SparkContext: Successfully stopped SparkContext
+23/07/14 05:12:41 INFO ShutdownHookManager: Shutdown hook called
+23/07/14 05:12:41 INFO ShutdownHookManager: Deleting directory /tmp/spark-97569f07-0c62-41ab-9931-d319e35ccaaa
+23/07/14 05:12:41 INFO ShutdownHookManager: Deleting directory /tmp/spark-26638dee-e8a7-4af6-94d4-2514e865727f
+23/07/14 05:12:41 INFO ShutdownHookManager: Deleting directory /tmp/spark-26638dee-e8a7-4af6-94d4-2514e865727f/pyspark-ecbc0dce-a15a-451e-b88c-ddfc08504bf4

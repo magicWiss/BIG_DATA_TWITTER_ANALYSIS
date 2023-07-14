@@ -1,0 +1,7 @@
+nltk
+spacy
+torch
+transformers
+scipy
+pyspark
+spark-nlp==4.4.2

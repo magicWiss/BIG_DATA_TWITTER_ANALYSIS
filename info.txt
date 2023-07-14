@@ -20,6 +20,8 @@
         OUTPUT FILES:
         Transformed_schema_data/*.csv
 
+        ($SPARK_HOME/bin/spark-submit --master local /home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Logics/1_DataIntegration/dataSchemaTransf/transformSchema.py --input_path file:///home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Dataset/RawData/Original_Raw_data/*.csv --output_path file:///home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Dataset/RawData/Transformed_schema_data/*.csv)
+
     3)Integrazione dati:
         dopo aver uniformato gli schemi dei diversi dataset presenti nel raw layer si effettua l'operazione di integrazione.
         La fase di schema matching è performata nello step precedente
@@ -27,17 +29,21 @@
         INPUT FILES:
         Transformed_schema_data/*.csv
         OUTPUT FILES:
-        Integreted_data/integratedData.csv
+        Integrated_data/integratedData.csv
+
+        ($SPARK_HOME/bin/spark-submit --master local /home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Logics/1_DataIntegration/dataIntegration/integration.py --input_path file:///home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Dataset/RawData/Transformed_schema_data/*.csv --output_path file:///home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Dataset/RawData/Integrated_data/integratedData.csv)
 
 
-2)Data_Agumentation
+
+
+2)Data_Augmentation
     E' il secondo layer della pipeline di analytics.
     I dati dopo essere integrati vengono agumentati mediante operazioni di: 
         1)Hashtag extraction
         2)Noun extraction
         3)...
 
-    Una volta agumentati i dati sono pronti per essere smistati nelle diverse pipeline parallele di (fase 3 della pipeline):
+    Una volta aumentati i dati sono pronti per essere smistati nelle diverse pipeline parallele di (fase 3 della pipeline):
         A)Graph creation
         B)Topic modeling
         C)Hashtag analysis
@@ -45,14 +51,16 @@
         INPUT FILE
         RawData/Integrated_data/integratedData.csv
         OUTPUT FILE
-        CuratedData/AgumentedData/dataWithhastags.csv
+        CuratedData/AugmentedData/dataWithHashtags.csv
+
+        ($SPARK_HOME/bin/spark-submit --master local /home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Logics/2_DataAgumentation/hashtagExtraction.py --input_path file:///home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Dataset/RawData/Integrated_data/integratedData.csv --output_path file:///home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Dataset/CuratedData/AugmentedData/dataWithHashtags)
 
 
 3)Data processing
 
     3.A)GRAPH CREATION:
 
-        I dati agumentati vengono usati per la creazione di una prima versione del grafo indotto dalle relazioni presenti tra i diversi utenti.
+        I dati aumentati vengono usati per la creazione di una prima versione del grafo indotto dalle relazioni presenti tra i diversi utenti.
 
         Il grafo viene memorizzato su NEO4J
 
@@ -61,7 +69,7 @@
         Successivamente questo grafo verrà adornato con informazioni extra (topic del tweet, sentiment del tweet).
 
         La scelta di creare il grafo senza info aggiuntive è dato dalla possibilità di poter estrarre da questo informazioni utili sul network degli utenti
-        Algoritmi di community search non richiedonon informazioni extra ma lavorano solo sulla topologia del grafo
+        Algoritmi di community search non richiedo informazioni extra ma lavorano solo sulla topologia del grafo
 
     3.B)Topic modeling
 
