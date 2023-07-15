@@ -1,8 +1,0 @@
-{
-    "uri":"mongodb://localhost:27017/",
-    "dbName":"Twitter_Analytics",
-    "coll_tweets":"Tweets",
-    "coll_sentiment":"Sentiment",
-    "coll_users":"Users",
-    "coll_hastags":"hastags"
-}

@@ -17,6 +17,9 @@ input_filepath, output_filepath = args.input_path, args.output_path
 # Define a list of file paths
 file_paths = input_filepath #tutti i file che verranno combinati
 
+for path in file_paths:
+    print("FILE")
+    print(path)
 spark = SparkSession.builder.appName("CSV Integration").getOrCreate()
 
 # Read the first CSV file into a DataFrame

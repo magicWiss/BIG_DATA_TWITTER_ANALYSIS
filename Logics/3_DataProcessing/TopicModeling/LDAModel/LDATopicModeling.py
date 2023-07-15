@@ -21,9 +21,18 @@ def extract_words(text):
     
 
 def get_top_topics(topics,maxnumber):
+    output=dict()
+    topic=0
+    for i in topics:
+        output[topic]=i
+        topic+=1
     
-    topics=sorted(topics)
-    return str(topics[:maxnumber])
+    #ordinamento del risultato
+    sorted_dict = sorted(output.items(), key=lambda x: float(x[1]))
+
+    sorted_dict = dict(sorted_dict)
+    
+    return str(list(sorted_dict.keys()))
     
 parser = argparse.ArgumentParser()
 parser.add_argument("--input_path", type=str, help="Input file paths")
@@ -87,7 +96,7 @@ topics_udf = udf(custom_partial, StringType())
 
 
 # Apply the UDF to limit the number of topics per row
-transformed = transformed.withColumn("limitedTopics", topics_udf(transformed["topicDistribution"]))
+transformed = transformed.withColumn( "limitedTopics",topics_udf(transformed["topicDistribution"]))
 
 
 

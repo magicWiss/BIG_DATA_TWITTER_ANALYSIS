@@ -1,0 +1,8 @@
+{
+    "uri":"mongodb://localhost:27017/",
+    "dbName":"Twitter_Analytics",
+    "tweets":"Tweets",
+    "sentiment":"Sentiment",
+    "users":"Users",
+    "hastags":"hastags"
+}
