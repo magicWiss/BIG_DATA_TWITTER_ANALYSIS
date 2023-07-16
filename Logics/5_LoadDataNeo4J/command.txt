@@ -1,0 +1,1 @@
+$SPARK_HOME/bin/spark-submit --executor-memory 10G --driver-memory 10g --packages graphframes:graphframes:0.8.2-spark3.1-s_2.12 --master local /home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Logics/5_LoadDataNeo4J/loadTweetData.py --input_path file:///home/federico/BD/BIG_DATA_TWITTER_ANALYSIS/Dataset/GraphConnections/total_connections/graph.csv

@@ -1,0 +1,6 @@
+{
+    "uri":"bolt://localhost:7687",
+    "mode": "Overwrite",
+    "username": "neo4j",
+    "password": "password"
+}
