@@ -35,6 +35,9 @@ def write_to_neo4j(graph):
             MERGE (src)-[:CONVERSATION]->(dst)
         """, {"rels": graph.edges.toPandas().to_dict('records')})
 
+        # create the graph on which Graph Data Science will perform the analytics
+        result = session.run("""CALL gds.graph.project('myProjection','Author', 'REPLYED_TO')""")
+
 
 #create parser and set its arguments
 parser = argparse.ArgumentParser()
