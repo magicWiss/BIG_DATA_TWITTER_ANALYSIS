@@ -68,10 +68,10 @@ class User:
         if sent==None:
             return self.sentiment
         if len(sent)==3:
-            self.sentiment["pos"]+=sent[0]
+            self.sentiment["pos"]=float(self.sentiment["pos"])+float(sent[0])
 
-            self.sentiment["med"]+=sent[1]
-            self.sentiment["neg"]+=sent[2]
+            self.sentiment["med"]=float(self.sentiment["med"])+float(sent[1])
+            self.sentiment["neg"]=float(self.sentiment["neg"])+float(sent[2])
     
 
 
@@ -85,7 +85,7 @@ class User:
 
     def compute_sentiment(self):
         for k in self.sentiment.keys():
-            self.sentiment[k]=self.sentiment[k]/self.total
+            self.sentiment[k]=float(self.sentiment[k])/self.total
         return str(self.sentiment)
     def to_row(self):
         #return (hash(self.id),self.id,self.total,str(self.users),str(self.clusters),str(self.topics),str(self.sentiment))

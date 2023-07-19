@@ -4,7 +4,7 @@ from pyspark.sql.functions import col, unix_timestamp, concat, lit, udf
 import argparse
 import ast
 from pyspark.sql.functions import from_unixtime
-from pyspark.sql.types import StructType, StructField, StringType, IntegerType, TimestampType, ArrayType
+from pyspark.sql.types import StructType, StructField, StringType, FloatType, TimestampType, ArrayType
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import explode,avg
 from datetime import datetime
@@ -50,17 +50,17 @@ schema = StructType([
     #StructField("id", StringType(),nullable=False),
     StructField("Hashtag", StringType(), nullable=False),
     StructField("Timestamp", TimestampType(), nullable=True),
-    StructField("Positive", IntegerType(), nullable=True),
-    StructField("Medium", IntegerType(), nullable=True),
-    StructField("Negative", IntegerType(), nullable=True)])
+    StructField("Positive", FloatType(), nullable=True),
+    StructField("Medium", FloatType(), nullable=True),
+    StructField("Negative", FloatType(), nullable=True)])
 
 data=[]
 for row in output_df.collect():
     hastags=row["hashtag_list"]
     timestamp=datetime.strptime(row["date"], '%Y-%m-%d %H:%M:%S')
-    pos=int(row["positive"])
-    med=int(row["medium"])
-    neg=int(row["negative"])
+    pos=float(row["positive"])
+    med=float(row["medium"])
+    neg=float(row["negative"])
     if len(hastags)>0:
         for h in hastags:
             data.append([h,timestamp,pos,med,neg])

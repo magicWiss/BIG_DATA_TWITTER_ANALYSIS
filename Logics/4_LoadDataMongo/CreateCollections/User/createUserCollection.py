@@ -14,13 +14,13 @@ hastag_col="hashtags"
 user_col="author_id"
 topics_col="limitedTopics"
 cluster_col="prediction"
-#sentiment_col="sentiment"
+sentiment_col="sentiment"
 
 def get_cols():
         return ["hastag","total","users","clusters","topics","sentiment"]
 
-def create_entry(id,total,hastags,topics,clusters):
-    obj=User(id,total,hastags,topics,clusters)
+def create_entry(id,total,hastags,topics,clusters,sentiment):
+    obj=User(id,total,hastags,topics,clusters,sentiment)
     return (id,obj)
     
 
@@ -30,6 +30,7 @@ def process_row(row):
     user=row[user_col]
     topics=ast.literal_eval(row[topics_col])
     clusters=row[cluster_col]
+    sentiment=ast.literal_eval(row[sentiment_col])
 
     
 
@@ -37,22 +38,22 @@ def process_row(row):
     
     
     
-    return [user,hastags,topics,clusters]
+    return [user,hastags,topics,clusters,sentiment]
     
 def update_output(output,elements):
     hashtags=elements[1]
     user=elements[0]
     topics=elements[2]
     clusters=elements[3]
-
+    sentiment=elements[4]
     
     if user not in output:
-            entry=create_entry(user,1,hashtags,topics,clusters)
+            entry=create_entry(user,1,hashtags,topics,clusters,sentiment)
             output[entry[0]]=entry[1]
         
     else:
             old_obj=output[user]
-            old_obj.update_Hastag(1,hashtags,topics,clusters)
+            old_obj.update_Hastag(1,hashtags,topics,clusters,sentiment)
             output[user]=old_obj
     
     return output

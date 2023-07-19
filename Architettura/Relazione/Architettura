@@ -1,0 +1,107 @@
+Relazione progetto big data
+
+[INTRODUZIONE]
+
+Importanza dei big data e dell'utilizzo dei dati
+
+Utilità dei dati provenienti dai social
+
+Possibili utilizzo dei dati provenienti dai social
+
+Introduzione al sistema
+
+[SISTEMA IN GENERALE]
+
+->Cosa fa il sistema (analisi batch): Analytics automatizzate dei dati.
+
+--Img)SCHEMA POCO DETTAGLIATO]
+
+--Sec)DESCRIZIONE DEI DATI
+
+----->Quali dati che vengono impiegati
+
+--Sec)DESCRIZIONE TASK DI ANALYTICS
+
+----->Quali analisi vengono performate sui dati reperiti
+
+--Sec)Tecnologie utilizzate
+	Motivando le scelte (neo4j per grafi), Mongodb per collezioni, hdfs per raw layer
+
+
+[ARCHITETTURA BIG DATA]
+
+->Architettura nel dettaglio
+
+--Img)Architettura
+
+--Sec)DATA INTEGRATION
+
+--Sec)GRAPH CREATION
+
+---SubSec)ANALISI EFFETTUATE
+---SubSec)RISULTATI ANALISI
+
+--Sec)DATA AGUMENTATION
+
+---SubSec)Perchè differenziare le due? Si lavora in parallelo
+
+--Sec)TWEETS ANALYTICS
+
+---SubSec)LDA MODELS and KMEANS
+
+---SubSec)Sentiment Analysis
+
+--Sec)COLLECTIONS AND CREATION (MONGODB)
+
+--Sec)MONGO<->NEO4J AGUMENTATION
+
+--Sec) DATA QUALITY
+	Memorizziamo tutti i dati prodotti per analizzare l'andamento della qualità del dato.
+	I topic possono cambiare e quindi potrebbe servire un fine-tuning dei parametri poichè il linguaggio utilizzato potrebbe cambiare
+	
+
+[ANALYTICS]
+
+->Alcuni risultati
+->Sistema InfoVIs
+
+[RISULTATI]
+
+Efficacia
+(qualità dei risultati individuati)
+
+Efficienza
+Velocità della pipeline al crescere dei datasets e dei tweets
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
