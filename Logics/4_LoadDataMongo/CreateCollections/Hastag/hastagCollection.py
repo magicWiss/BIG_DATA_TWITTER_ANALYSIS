@@ -7,30 +7,32 @@ from pyspark.ml.fpm import FPGrowth
 import argparse
 from hastagClass import Hastag
 import ast
-from pyspark.sql.types import StructType, StructField, StringType, IntegerType
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType, ArrayType, FloatType
 
 
 hastag_col="hashtags"
 user_col="author_id"
 topics_col="limitedTopics"
 cluster_col="prediction"
-#sentiment_col="sentiment"
+sentiment_col="sentiment"
 
 def get_cols():
         return ["hastag","total","users","clusters","topics","sentiment"]
 
-def create_entry(id,total,user,topics,clusters):
-    obj=Hastag(id,total,user,topics,clusters)
+def create_entry(id,total,user,topics,clusters,sentiment):
+    obj=Hastag(id,total,user,topics,clusters,sentiment)
     return (id,obj)
     
 
 def process_row(row):
     
-    output=[]   #lista di dizionari {id:hastag,value:oggetto Hastag}
+    
     hastags=ast.literal_eval(row[hastag_col])
     user=row[user_col]
     topics=ast.literal_eval(row[topics_col])
     clusters=row[cluster_col]
+    sentiment=ast.literal_eval(row[sentiment_col])
+    print("SENTIMENT",sentiment)
 
     
 
@@ -38,23 +40,24 @@ def process_row(row):
     
     
     
-    return [hastags,user,topics,clusters]
+    return [hastags,user,topics,clusters,sentiment]
     
 def update_output(output,elements):
     hashtags=elements[0]
     user=elements[1]
     topics=elements[2]
     clusters=elements[3]
+    sentiment=elements[4]
 
     for h in hashtags:
         current_hastag=h
         if current_hastag not in output:
-            entry=create_entry(current_hastag,1,user,topics,clusters)
+            entry=create_entry(current_hastag,1,user,topics,clusters,sentiment)
             output[entry[0]]=entry[1]
         
         else:
             old_obj=output[current_hastag]
-            old_obj.update_Hastag(1,user,topics,clusters)
+            old_obj.update_Hastag(1,user,topics,clusters,sentiment)
             output[current_hastag]=old_obj
     
     return output

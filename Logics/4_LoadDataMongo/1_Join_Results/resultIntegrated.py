@@ -48,7 +48,7 @@ for path in file_paths[1:]:
     
     joined_df = joined_df.join(df, on=["tweet_id"], how="inner")
 
-new_column_order = ["tweet_id","author_id","conversation_author_id","conversation_id","timestamp","hashtags","parsed_text","prediction","limitedTopics"]
+new_column_order = ["tweet_id","author_id","conversation_author_id","conversation_id","timestamp","hashtags","parsed_text","prediction","limitedTopics","sentiment_bert","sentiment_spark"]
 joined_df = joined_df.select(*new_column_order)
 # Save the frequent itemsets as a CSV file
 joined_df.write.csv(output_filepath, header=True)

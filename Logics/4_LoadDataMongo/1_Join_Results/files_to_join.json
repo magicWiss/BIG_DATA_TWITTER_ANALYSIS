@@ -1,5 +1,6 @@
 {
     "file1":"file:///home/matteowissel/BigDataFinal/BIG_DATA_TWITTER_ANALYSIS/Dataset/CuratedData/IntegrateResult/SRC/LDAModelResult.csv",
-    "file2":"file:///home/matteowissel/BigDataFinal/BIG_DATA_TWITTER_ANALYSIS/Dataset/CuratedData/IntegrateResult/SRC/BOWModelResult.csv"
+    "file2":"file:///home/matteowissel/BigDataFinal/BIG_DATA_TWITTER_ANALYSIS/Dataset/CuratedData/IntegrateResult/SRC/BOWModelResult.csv",
+    "file3":"file:///home/matteowissel/BigDataFinal/BIG_DATA_TWITTER_ANALYSIS/Dataset/CuratedData/IntegrateResult/SRC/all_sentiment.csv"
     
 }
