@@ -7,9 +7,9 @@ password = 'password'
 
 driver = GraphDatabase.driver(uri, auth=(user, password), database='neo4j')
 
-def getNodeIds(idxsList):
+def get_node_ids(idxs_list):
     pandas_df = driver.execute_query(
-        f"MATCH (n:Author) WHERE ID(n) IN {idxsList} RETURN ID(n) AS nodeId, n.id AS id",
+        f"MATCH (n:Author) WHERE ID(n) IN {idxs_list} RETURN ID(n) AS nodeId, n.id AS id",
         database_="neo4j",
         result_transformer_= Result.to_df
     )
@@ -45,7 +45,7 @@ res_df_louvain = res_df[res_df['nodeProperty'] == 'louvainId'].drop(['nodeProper
 louvainId2nodes = res_df_louvain.groupby('propertyValue')['nodeId'].agg(list).reset_index()
 louvainId2nodes.columns = ['propertyValue', 'nodeIds']
 louvainId2nodes['numNodes'] = louvainId2nodes['nodeIds'].apply(lambda x: len(x))
-df_nodeIdx_nodeId = getNodeIds(louvainId2nodes['nodeIds'].sum())
+df_nodeIdx_nodeId = get_node_ids(louvainId2nodes['nodeIds'].sum())
 louvainId2nodes['nodeIds'] = louvainId2nodes['nodeIds'].apply(nodeidxtonodeid)
 louvainId2nodes.to_csv('D:\Projects\BIG_DATA_TWITTER_ANALYSIS\Dataset\CuratedData\CommunityDetection\louvain.csv', index=False)
 
@@ -54,11 +54,11 @@ res_df_wcc = res_df[res_df['nodeProperty'] == 'wccId'].drop(['nodeProperty'], ax
 wccId2nodes = res_df_wcc.groupby('propertyValue')['nodeId'].agg(list).reset_index()
 wccId2nodes.columns = ['propertyValue', 'nodeIds']
 wccId2nodes['numNodes'] = wccId2nodes['nodeIds'].apply(lambda x: len(x))
-df_nodeIdx_nodeId = getNodeIds(wccId2nodes['nodeIds'].sum())
+df_nodeIdx_nodeId = get_node_ids(wccId2nodes['nodeIds'].sum())
 wccId2nodes['nodeIds'] = wccId2nodes['nodeIds'].apply(nodeidxtonodeid)
 wccId2nodes.to_csv('D:\Projects\BIG_DATA_TWITTER_ANALYSIS\Dataset\CuratedData\CommunityDetection\wcc.csv', index=False)
 
 res_df_pagerank = res_df[res_df['nodeProperty'] == 'pageRank'].drop(['nodeProperty'], axis=1)
-df_nodeIdx_nodeId = getNodeIds(res_df_pagerank['nodeId'].agg(list))
-res_df['nodeId'] = res_df['nodeId'].apply(nodeidxtonodeid)
+df_nodeIdx_nodeId = get_node_ids(res_df_pagerank['nodeId'].agg(list))
+res_df_pagerank['nodeId'] = res_df_pagerank['nodeId'].apply(nodeidxtonodeid)
 res_df_pagerank.to_csv('D:\Projects\BIG_DATA_TWITTER_ANALYSIS\Dataset\CuratedData\CommunityDetection\pagerank.csv', index=False)
