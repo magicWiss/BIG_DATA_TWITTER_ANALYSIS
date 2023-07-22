@@ -1,0 +1,42 @@
+{
+    "1": {
+        "total": 235360,
+        "wordcount": "{'qatar': 112277, 'rt': 61188, 'data': 57314, 'de': 40169, 'irnusa': 37402, 'saytheirnames': 36995, 'ukraine': 32418, 'analysis': 27855, 'fifaworldcup': 26525, 'la': 24922, 'war': 24673, 'islamic': 24216, 'visualization': 22562, 'killed': 21296, 'republic': 21061, 'en': 20362, 'shot': 20161, 'regime': 18431, 'old': 17335, 'world': 16060}"
+    },
+    "8": {
+        "total": 90398,
+        "wordcount": "{'qatar': 36536, 'data': 26257, 'de': 24091, 'rt': 20344, 'ukraine': 16809, 'analysis': 13808, 'la': 11762, 'en': 10886, 'war': 10486, 'ukrainewar': 10233, 'visualization': 9130, 'fifaworldcup': 8568, 'el': 8336, 'russia': 6481, 'los': 6457, 'saytheirnames': 5685, 'amp': 5640, 'world': 5424, 'children': 5327, 'irnusa': 5208}"
+    },
+    "4": {
+        "total": 25567,
+        "wordcount": "{'data': 8767, 'qatar': 7515, 'ukraine': 7077, 'analysis': 5024, 'war': 4723, 'ukrainewar': 3974, 'rt': 3394, 'de': 3021, 'russia': 2821, 'visualization': 2707, 'fifaworldcup': 2420, 'amp': 2312, 'russian': 1656, 'world': 1619, 'la': 1528, 'ukrainerussiawar': 1396, 'killed': 1253, 'en': 1152, 'irnusa': 1122, 'saytheirnames': 1119}"
+    },
+    "2": {
+        "total": 236902,
+        "wordcount": "{'qatar': 101805, 'data': 67838, 'rt': 58784, 'irnusa': 39010, 'saytheirnames': 38684, 'ukraine': 33537, 'analysis': 33294, 'war': 27342, 'visualization': 26264, 'islamic': 25803, 'fifaworldcup': 24231, 'killed': 23193, 'republic': 22118, 'shot': 20399, 'regime': 19940, 'de': 18806, 'old': 18292, 'world': 17942, 'iran': 17340, 'la': 15209}"
+    },
+    "6": {
+        "total": 228044,
+        "wordcount": "{'qatar': 108665, 'data': 63734, 'rt': 57587, 'de': 38720, 'irnusa': 36137, 'saytheirnames': 35328, 'analysis': 30873, 'fifaworldcup': 27505, 'ukraine': 26744, 'visualization': 24886, 'war': 24304, 'islamic': 24164, 'la': 23883, 'republic': 20964, 'en': 19828, 'shot': 19600, 'killed': 19347, 'regime': 17790, 'world': 16893, 'iran': 16713}"
+    },
+    "5": {
+        "total": 6187,
+        "wordcount": "{'data': 2105, 'qatar': 1986, 'ukraine': 1590, 'analysis': 1259, 'de': 1258, 'war': 991, 'ukrainewar': 965, 'la': 710, 'rt': 698, 'amp': 651, 'fifaworldcup': 607, 'russia': 601, 'visualization': 561, 'en': 493, 'russian': 421, 'world': 374, 'el': 295, 'killed': 292, 'saytheirnames': 288, 'ukrainerussiawar': 286}"
+    },
+    "7": {
+        "total": 891,
+        "wordcount": "{'ukraine': 383, 'war': 274, 'qatar': 263, 'data': 193, 'amp': 187, 'ukrainewar': 181, 'russia': 156, 'analysis': 131, 'fifaworldcup': 112, 'de': 78, 'russian': 73, 'world': 64, 'us': 61, 'putin': 55, 'ukrainian': 53, 'rt': 52, 'one': 51, 'people': 49, 'ukrainerussiawar': 47, 'nato': 47}"
+    },
+    "9": {
+        "total": 1683,
+        "wordcount": "{'qatar': 664, 'ukraine': 445, 'data': 414, 'war': 354, 'analysis': 295, 'ukrainewar': 215, 'fifaworldcup': 210, 'amp': 201, 'russia': 163, 'rt': 161, 'saytheirnames': 153, 'world': 139, 'irnusa': 134, 'worldcup': 121, 'us': 106, 'iran': 102, 'de': 101, 'forces': 96, 'people': 92, 'islamic': 92}"
+    },
+    "3": {
+        "total": 133,
+        "wordcount": "{'qatar': 63, 'de': 50, 'ukraine': 45, 'war': 24, 'rt': 23, 'ukrainewar': 21, 'la': 19, 'russia': 17, 'les': 16, 'amp': 15, 'le': 15, 'world': 13, 'na': 12, 'cup': 12, 'worldcup': 12, 'fifaworldcup': 12, 'two': 11, 'en': 10, 'et': 10, 'pour': 10}"
+    },
+    "0": {
+        "total": 924,
+        "wordcount": "{'qatar': 27, 'world': 17, 'war': 15, 'ukraine': 13, 'fifaworldcup': 11, 'team': 11, 'lives': 8, 'amp': 7, 'ukrainewar': 7, 'iranrevolution': 7, 'iran': 7, 'failed': 6, 'must': 6, 'russia': 6, 'cup': 6, 'game': 6, 'iranians': 6, 'us': 6, 'regret': 5, 'unnecessary': 5}"
+    }
+}
